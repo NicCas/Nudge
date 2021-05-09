@@ -3,7 +3,11 @@ package com.bignerdranch.android.nudge
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.bignerdranch.android.nudge.databinding.ActivityMainBinding
+import com.bignerdranch.android.nudge.fragments.HabitFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  //prevents app from going into night mode
 
         setUpTabBar()
+
     }
 
     //method to set up the nav bar and what is displayed
@@ -26,7 +31,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_view -> binding.textMain.text = "Calendar View"
                 R.id.nav_edit -> binding.textMain.text = "Calendar Edit"
                 R.id.nav_ht -> {
-                    binding.textMain.text = "Habit Tracker"
+                    makeCurrentFragment(HabitFragment())
+                    binding.textMain.text = ""
                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }
                 R.id.nav_settings -> {
@@ -36,4 +42,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun makeCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_wrapper, fragment)
+            commit()
+        }
 }

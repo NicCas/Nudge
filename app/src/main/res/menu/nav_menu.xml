@@ -25,4 +25,10 @@
         android:title="Settings"
         app:cnb_iconColor="#FFEB3B"/>
 
+    <!--Deleting habits-->
+    <item android:id="@+id/nav_delete"
+        android:icon="@drawable/ic_baseline_delete"
+        android:title="Delete all habits"
+        app:showAsAction="withText" />
+
 </menu>
