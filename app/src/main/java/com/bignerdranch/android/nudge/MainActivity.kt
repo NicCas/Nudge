@@ -7,7 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.bignerdranch.android.nudge.databinding.ActivityMainBinding
+import com.bignerdranch.android.nudge.fragments.CalendarEditFragment
+import com.bignerdranch.android.nudge.fragments.CalendarViewFragment
 import com.bignerdranch.android.nudge.fragments.HabitFragment
+import com.bignerdranch.android.nudge.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,15 +31,14 @@ class MainActivity : AppCompatActivity() {
     private fun setUpTabBar() {
         binding.bottomNavBar.setOnItemSelectedListener {
             when (it) {
-                R.id.nav_view -> binding.textMain.text = "Calendar View"
-                R.id.nav_edit -> binding.textMain.text = "Calendar Edit"
+                R.id.nav_view -> makeCurrentFragment(CalendarViewFragment())
+                R.id.nav_edit -> makeCurrentFragment(CalendarEditFragment())
                 R.id.nav_ht -> {
                     makeCurrentFragment(HabitFragment())
-                    binding.textMain.text = ""
                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }
                 R.id.nav_settings -> {
-                    binding.textMain.text = "Settings"
+                    makeCurrentFragment(SettingsFragment())
                     binding.bottomNavBar.dismissBadge(R.id.nav_settings)
                 }
             }
