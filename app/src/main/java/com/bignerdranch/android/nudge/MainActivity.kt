@@ -31,13 +31,21 @@ class MainActivity : AppCompatActivity() {
     private fun setUpTabBar() {
         binding.bottomNavBar.setOnItemSelectedListener {
             when (it) {
-                R.id.nav_view -> makeCurrentFragment(CalendarViewFragment())
-                R.id.nav_edit -> makeCurrentFragment(CalendarEditFragment())
+                R.id.nav_view -> {
+                    binding.textMain.text = ""
+                    makeCurrentFragment(CalendarViewFragment())
+                }
+                R.id.nav_edit -> {
+                    binding.textMain.text = ""
+                    makeCurrentFragment(CalendarEditFragment())
+                }
                 R.id.nav_ht -> {
+                    binding.textMain.text = ""
                     makeCurrentFragment(HabitFragment())
                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }
                 R.id.nav_settings -> {
+                    binding.textMain.text = ""
                     makeCurrentFragment(SettingsFragment())
                     binding.bottomNavBar.dismissBadge(R.id.nav_settings)
                 }

@@ -27,9 +27,10 @@
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="0.5in"
+        android:layout_marginEnd="30dp"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_baseline_add" />

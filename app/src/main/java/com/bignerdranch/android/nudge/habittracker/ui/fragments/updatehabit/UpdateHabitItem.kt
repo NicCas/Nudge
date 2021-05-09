@@ -20,6 +20,7 @@ import com.bignerdranch.android.nudge.R
 import com.bignerdranch.android.nudge.habittracker.data.models.Habit
 import com.bignerdranch.android.nudge.habittracker.logic.utils.Calculations
 import com.bignerdranch.android.nudge.habittracker.ui.viewmodels.HabitViewModel
+import kotlinx.android.synthetic.main.fragment_create_habit_item.*
 
 import kotlinx.android.synthetic.main.fragment_update_habit_item.*
 import java.util.*
@@ -47,6 +48,10 @@ class UpdateHabitItem : Fragment(R.layout.fragment_update_habit_item),
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         habitViewModel = ViewModelProvider(this).get(HabitViewModel::class.java)
+
+        backButton_update.setOnClickListener {
+            findNavController().navigate(R.id.action_updateHabitItem_to_habitList)
+        }
 
         //Retrieve data from our habit list
         et_habitName_update.setText(args.selectedHabit.habit_title)

@@ -49,6 +49,10 @@ class CreateHabitItem : Fragment(R.layout.fragment_create_habit_item),
 
         habitViewModel = ViewModelProvider(this).get(HabitViewModel::class.java)
 
+        backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_createHabitItem_to_habitList)
+        }
+
         //Add habit to database
         btn_add_habit.setOnClickListener {
             hideKeyboard()

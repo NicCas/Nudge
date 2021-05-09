@@ -67,6 +67,7 @@ class HabitList : Fragment(R.layout.fragment_habit_list) {
         inflater.inflate(R.menu.nav_menu, menu)
     }
 
+    //deletes all habits
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_delete -> habitViewModel.deleteAllHabits()
