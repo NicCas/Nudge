@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.bignerdranch.android.nudge"
-        minSdkVersion 21
+        minSdkVersion 23 //changed from version 21 -> 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    //added build features for nav bar
+    buildFeatures {
+        viewBinding true
+
+    }
+
 }
 
 dependencies {
@@ -42,4 +48,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //new dependency for nav bar vvvv
+    implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.3.4'
 }
