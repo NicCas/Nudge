@@ -1,2 +1,2 @@
 # Nudge
-Andriod Reminder and Habit tracker App 
+Android Reminder and Habit tracker App 
