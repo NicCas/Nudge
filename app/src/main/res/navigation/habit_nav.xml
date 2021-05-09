@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/habit_nav"
+    app:startDestination="@id/habitList">
+
+    <fragment
+        android:id="@+id/habitList"
+        android:name="com.bignerdranch.android.nudge.habittracker.ui.fragments.habitlist.HabitList"
+        android:label="Habits"
+        tools:layout="@layout/fragment_habit_list" >
+        <action
+            android:id="@+id/action_habitList_to_updateHabitItem"
+            app:destination="@id/updateHabitItem" />
+        <action
+            android:id="@+id/action_habitList_to_createHabitItem"
+            app:destination="@id/createHabitItem" />
+        <action
+            android:id="@+id/action_habitList_to_createHabitItem2"
+            app:destination="@id/createHabitItem" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateHabitItem"
+        android:name="com.bignerdranch.android.nudge.habittracker.ui.fragments.updatehabit.UpdateHabitItem"
+        android:label="Update habit"
+        tools:layout="@layout/fragment_update_habit_item" >
+        <action
+            android:id="@+id/action_updateHabitItem_to_habitList"
+            app:destination="@id/habitList"
+            app:exitAnim="@anim/fragment_close_exit" />
+        <!--IMPORTANT to change argType when transferring-->
+        <argument
+            android:name="selectedHabit"
+            app:argType="com.bignerdranch.android.nudge.habittracker.data.models.Habit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createHabitItem"
+        android:name="com.bignerdranch.android.nudge.habittracker.ui.fragments.createhabit.CreateHabitItem"
+        android:label="Create a new habit"
+        tools:layout="@layout/fragment_create_habit_item" >
+        <action
+            android:id="@+id/action_createHabitItem_to_habitList"
+            app:destination="@id/habitList" />
+    </fragment>
+</navigation>

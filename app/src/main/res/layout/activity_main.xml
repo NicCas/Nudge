@@ -9,6 +9,10 @@
     tools:overrideLibrary="com.ismaeldivita.chipnavigation">
     <!--not sure if this line is needed^^-->
 
+    <FrameLayout
+        android:id="@+id/fl_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <TextView
         android:id="@+id/text_main"
