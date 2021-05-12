@@ -5,15 +5,15 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_icon"
+        android:title="Home"
+        app:cnb_iconColor="#F44336"/>
+    <item
         android:id="@+id/nav_view"
         android:icon="@drawable/calendar_view_icon"
         android:title="Calendar View"
         app:cnb_iconColor="#03A9F4"/>
-    <item
-        android:id="@+id/nav_edit"
-        android:icon="@drawable/calendar_edit_icon"
-        android:title="Calendar Edit"
-        app:cnb_iconColor="#F44336"/>
     <item
         android:id="@+id/nav_ht"
         android:icon="@drawable/habit_tracker_icon"
