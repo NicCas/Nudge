@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  //prevents app from going into night mode
 
         setUpTabBar()
@@ -29,20 +29,20 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavBar.setOnItemSelectedListener {
             when (it) {
                 R.id.nav_home -> {
-                    binding.textMain.text = ""
+
                     makeCurrentFragment(HomeFragment())
                 }
                 R.id.nav_view -> {
-                    binding.textMain.text = ""
+
                     makeCurrentFragment(CalendarViewFragment())
                 }
                 R.id.nav_ht -> {
-                    binding.textMain.text = ""
+
                     makeCurrentFragment(HabitFragment())
                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }
                 R.id.nav_settings -> {
-                    binding.textMain.text = ""
+
                     makeCurrentFragment(SettingsFragment())
                     binding.bottomNavBar.dismissBadge(R.id.nav_settings)
                 }
