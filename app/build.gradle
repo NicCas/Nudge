@@ -40,6 +40,14 @@ android {
 
 }
 
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
 dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -83,5 +91,9 @@ dependencies {
 
     //Date picker
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+    //Calendar Library Github links
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    implementation 'com.github.kizitonwose:CalendarView:1.0.4'
 
 }
